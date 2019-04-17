@@ -1,0 +1,191 @@
+<clr-main-container>
+	<header class="header-2">
+		<div class="branding">
+			<a class="nav-link">
+				<clr-icon shape="home" size="24"></clr-icon>
+				<span class="title">Project Proto</span>
+			</a>
+		</div>
+		<div class="header-nav">
+      <a class="nav-link nav-text">Home</a>
+			<a class="active nav-link nav-text">Pipeline</a>     
+		</div>
+    <div class="settings">
+      <div class="tool right">
+      <a class="nav-settings"> <i class="fa fa-cog fa-2x"></i></a>    
+    </div>
+     <div class="tool right">
+        <a class="nav-settings"> <i class="fa fa-sign-out fa-2x"></i></a>    
+    </div>
+    </div>
+	</header>
+	<div class="content-container">
+		<div class="content-area">
+      <div class="main-page">
+        <div>
+      <section class="container grid">
+
+
+        <!-- in the sources container show three cards, side by side, or one atop the other on smaller viewports -->
+        <div class="container__sources" data-after-content="Source" >
+
+            <i class="fa fa-{{icon}} fa-3x"></i>
+            <div class="sources--cms block-v" (drop)="drop($event)" (dragover)="allowDrop($event)">
+                <h3>SCM</h3>
+                <p>GIT, GITHUB, GITLAB etc.</p>
+            </div>
+        </div>
+        <div class="container__link">
+            <!-- include a simple line to divide the container, and animate it to show a connection between the different containers  -->
+            <svg viewbox="0 0 100 80">
+                <line x1="0" x2="100" y1="10" y2="10" />
+            </svg>
+        </div>
+
+        <!-- in the build container show two cards, atop of one another and the first of one showing an SVG icon -->
+        <div class="container__build" data-after-content="Build">
+            <div class="build--powered">               
+                  <i class="fa fa-cogs fa-3x"></i>
+                <p>powered by</p>
+                <h3>Gradle</h3>
+            </div>
+        </div>
+        <div class="container__link">
+            <!-- include a simple line to divide the container, and animate it to show a connection between the different containers  -->
+            <svg viewbox="0 0 100 80">
+                <line x1="0" x2="100" y1="10" y2="10" />
+            </svg>
+        </div>
+
+        <!-- in the sources container show three cards, side by side, or one atop the other on smaller viewports -->
+        <div class="container__sources" data-after-content="Test">
+            <!-- <i class="fa fa-eye fa-3x" style="position: absolute;    right: 110px;    top: 41px;"></i> -->
+            <div class="sources--cms block-v">
+                <h3>Functional</h3>
+                <p>Selenium, Protractor etc.</p>
+            </div>
+
+            <div class="sources--markdown block-v">
+                <h3>Performance</h3>
+                <p>Load Test, Stress Test, etc.</p>
+            </div>
+
+            <div class="sources--data block-v">
+                <h3>Security</h3>
+                <p>APIs, Databases, UI, etc.</p>
+            </div>
+        </div>
+
+        <div class="container__link" >
+            <!-- include a simple line to divide the container, and animate it to show a connection between the different containers  -->
+            <svg viewbox="0 0 100 80">
+                <line x1="0" x2="100" y1="10" y2="10" />
+            </svg>
+        </div>
+        <!-- in the deploy container show simply text, without a wrapping card -->
+        <div class="container__deploy" data-after-content="Deoloy">
+            <div class="build--powered" style="min-width: 160px;">
+                <i class="fa fa-globe fa-3x"></i>
+                <p>Deployed on</p>
+                <h3>AWS</h3>
+            </div>
+
+            <div class="build--stack">
+                Front End
+            </div>
+        </div>
+
+    </section>
+    </div>
+      </div>
+      <div class="sideNav-container">
+        <clr-vertical-nav  class="vertical-nav">
+          <a clrVerticalNavLink href="javascript://" title="xxx">
+            Dashboard
+          </a>
+          
+          <clr-vertical-nav-group title="Source"
+            [clrVerticalNavGroupExpanded]="expanded[0]"
+            (clrVerticalNavGroupExpandedChange)="toggle($event, 0)">
+            Source
+            <clr-vertical-nav-group-children>
+              <a clrHorizondalNavLink href="scm://git" title="git" draggable="true"  (dragstart)="drag($event)">
+                  <i class="fa fa-git fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="scm://github" title="github" draggable="true"  (dragstart)="drag($event)">
+                 <i class="fa fa-github fa-3x"></i>
+              </a>
+            </clr-vertical-nav-group-children>
+            <clr-vertical-nav-group-children>            
+              <a clrHorizondalNavLink href="scm://gitlab" title="gitlab" draggable="true"  (dragstart)="drag($event)">
+                <i class="fa fa-gitlab fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="scm://bitbucket" title="bitbucket" draggable="true"  (dragstart)="drag($event)">
+                 <i class="fa fa-bitbucket fa-3x"></i>
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <clr-vertical-nav-group title="Test"
+            [clrVerticalNavGroupExpanded]="expanded[1]"
+            (clrVerticalNavGroupExpandedChange)="toggle($event, 1)">
+            Test
+            <clr-vertical-nav-group-children>
+              <a clrHorizondalNavLink href="test://web" title="web">
+                  <i class="fa fa-globe fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://android" title="android">
+                 <i class="fa fa-android fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://apple" title="apple">
+                <i class="fa fa-apple fa-3x"></i>
+              </a>
+            </clr-vertical-nav-group-children>
+            <clr-vertical-nav-group-children>            
+              <a clrHorizondalNavLink href="test://Jmeter" title="Jmeter">
+                <i class="fa fa-signal fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://Loadrunner" title="Loadrunner">
+                 <i class="fa fa-line-chart fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://Gatling" title="Gatling">
+                 <i class="fa fa-crosshairs fa-3x"></i>
+              </a>
+            </clr-vertical-nav-group-children>
+            <clr-vertical-nav-group-children>            
+              <a clrHorizondalNavLink href="test://Security" title="Security">
+                <i class="fa fa-user-secret fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://Sonar" title="Sonar">
+                 <i class="fa fa-code fa-3x"></i>
+              </a>
+              <a clrHorizondalNavLink href="test://Unit" title="Unit">
+                 <i class="fa fa-bug fa-3x"></i>
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+
+          <clr-vertical-nav-group title="zzz"
+            [clrVerticalNavGroupExpanded]="expanded[2]"
+            (clrVerticalNavGroupExpandedChange)="toggle($event, 2)">
+            Deploy
+            <clr-vertical-nav-group-children>
+              <a clrVerticalNavLink href="javascript://" title="aaa">
+                AWS
+              </a>
+              <a clrVerticalNavLink href="javascript://" title="bbb">
+                Google
+              </a>
+              <a clrVerticalNavLink href="javascript://" title="ccc">
+                Azure 
+              </a>
+              <a clrVerticalNavLink href="javascript://" title="ddd">
+                Others
+              </a>
+            </clr-vertical-nav-group-children>
+          </clr-vertical-nav-group>
+        </clr-vertical-nav>
+      </div>
+		</div>
+	</div>
+</clr-main-container>
