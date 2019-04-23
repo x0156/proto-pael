@@ -49,11 +49,11 @@ padding: 6vh 2rem;
   height: 5rem;
 }
 .container svg line {
-  stroke: #5f39dd;
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-dasharray: 2px 20px;
-  animation: animateline 5s linear both infinite;
+ stroke: #5f39dd;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-dasharray: 20px 4px;
+    animation: animateline 5s linear both infinite;
 }
 h3 {
   font-size: 14px;
